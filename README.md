@@ -1,2 +1,2 @@
 # equiv_med
-Functions for clinical euiqvalence testing
+Python functions for clinical equivalence testing
