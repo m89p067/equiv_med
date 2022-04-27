@@ -45,13 +45,13 @@ class Cat_Eye_2var(ci_base.init_ci):
         high_of_b=my_values[3]
         print('\nConfidence Interval inclusion check:')
         if low_of_b<low_of_a and high_of_a<high_of_b: #Open intervals are defined as those which don’t include their endpoints.
-            sentence='The first variable C.I. are entirely inside the C.I. of the second variable (open interval)'
+            sentence='The first variable C.I. is entirely inside the C.I. of the second variable (open interval)'
         elif low_of_a<low_of_b and high_of_b<high_of_a: #Open intervals are defined as those which don’t include their endpoints.
-            sentence='The second variable C.I. are entirely inside the C.I. of the first variable (open interval)'
+            sentence='The second variable C.I. is entirely inside the C.I. of the first variable (open interval)'
         elif low_of_b<=low_of_a and high_of_a<=high_of_b:
-            sentence='The first variable C.I. are contained by the C.I. of the second variable (close interval)'
+            sentence='The first variable C.I. is contained by the C.I. of the second variable (close interval)'
         elif low_of_a<=low_of_b and high_of_b<=high_of_a:
-            sentence='The second variable C.I. are contained by the C.I. of the first variable (close interval)'
+            sentence='The second variable C.I. is contained by the C.I. of the first variable (close interval)'
         else:
             sentence='Nothing significant'
         return sentence
