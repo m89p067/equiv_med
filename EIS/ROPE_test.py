@@ -1,4 +1,5 @@
 # ROPE
+from scipy.stats import gaussian_kde
 import numpy as np
 import scipy.stats as stats
 from statistics import stdev,mean
