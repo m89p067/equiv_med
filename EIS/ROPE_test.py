@@ -179,10 +179,10 @@ class ROPE():
         if len(self.x)>50 and ROPE.is_normal==True:
             if which_rope=='eti':
                 lo,hi,r_lo,r_hi,area1,w_area1=self.rope_calc2()
-                stringa="equal-tailed interval"
+                stringa="ETI"
             else:
                 lo,hi,r_lo,r_hi,area1,w_area1=self.rope_hdi2()
-                stringa="highest density interval"
+                stringa="HDI"
             valori=self.x
             x_val=np.linspace(valori.min(),valori.max(),num=len(self.x)*2,endpoint=True)
             kernel = stats.gaussian_kde(valori)
