@@ -4,6 +4,8 @@ Python functions for clinical **equivalence testing**. An overview is provided b
 
 ![Function_Overview](/schema2.png)
 
+The repository contains Python functions to produce novel graphs for biomedical equivalence testing. Visualization enhances the interpretation and storytelling of statistical tests. Each function checks the preliminary assumptions of the tests automatically. The scripts were subdivided into four folders following the scheme in the figure and paired with console outputs. Users interested in running bio-similarity analysis can download the code and follow the instructions contained in the referenced manuscript. Future versions will expand the functionalities and facilitate installation through pip.
+
 Explanations, references, and examples included in:<br />
 M. Nascimben and L. Rimondini <br />
 *Visually enhanced python function for equality of measurement assessment*<br />
