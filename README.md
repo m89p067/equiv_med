@@ -8,7 +8,7 @@ The repository contains Python functions to produce novel graphs for biomedical 
 
 # Installation
 ```Python
-pip install git+https://github.com/m89p067/equiv_med
+pip install git+https://github.com/m89p067/equivmed.git
 ```
 Please check pip, git and setuptools are properly installed on your system.
 
@@ -16,3 +16,19 @@ Please check pip, git and setuptools are properly installed on your system.
 M. Nascimben and L. Rimondini <br />
 *Visually enhanced python function for equality of measurement assessment*<br />
 Presented during the IEEE Fedcsis 2022 conference (4-7 September, Sofia, Bulgaria)<br />
+
+#Minimal working examples
+## Bland-Altman revised plot
+```Python
+import numpy as np
+from equivmed.EQU import eq_BA
+mu1,sigma1=100.2,62.6
+mu2,sigma2=130.9,80.2
+var1= np.random.normal(mu1, sigma1, 300)
+var2= np.random.normal(mu2, sigma2, 300)
+my_BA=eq_BA.BA_analysis(var1,var2)
+#Bland-Altman plot
+my_BA.run_analysis() # default 95% of the difference will lie in this interval
+#In case of repeated measures
+my_BA.minimal_detectable_change() #output also Minimal Detectable Change 
+```
