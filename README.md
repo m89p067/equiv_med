@@ -26,7 +26,9 @@ mu2,sigma2=130.9,80.2
 var1= np.random.normal(mu1, sigma1, 300)
 var2= np.random.normal(mu2, sigma2, 300)
 ```
-## Bland-Altman revised plot
+
+## Equivalence and agreement between measurements
+### Bland-Altman revised plot
 Evalutes the laboratory outputs of two devices or values of two organic samples and checks the agreement
 ```Python
 from equiv_med.EQU import eq_BA
@@ -44,7 +46,7 @@ out4=my_BA.exact_Bound_assurance(mu2,sigma2,len(var2),95,0.05,0.9)
 my_BA.minimal_detectable_change() #output also Minimal Detectable Change 
 ```
 
-## Regression residuals diagnostics 
+### Regression residuals diagnostics 
 Creates a linear model old vs. new methodology and evaluates the residuals
 ```Python
 from equiv_med.EQU import eq_Regr
@@ -53,12 +55,28 @@ my_regr.run_diagnostic([0.05,0.1,0.2]) # Cook values
 my_regr.influential_points() #DIFFITS & DFBETAS with default thresholds
 ```
 
-## CatEyes plots 
-Confidence interval visualization and comparison graph (as in [11])
+### CatEyes plots 
+Visualization and comparison graph of 95% confidence intervals for the two measurements
 ```Python
 from equiv_med.CI import ci_Cateyes
 my_ce=ci_Cateyes.Cat_Eye_2var(var1,var2)
 my_ce.run_ce(95) # C.I. value
 my_ce.run_ce_unbiased(95) # C.I. value
 my_ce.single_cat_eye(var1,95) # C.I. value
+```
+
+### Cohen's d
+
+
+## Special case functions
+### Stacked representations of confidence intervals 
+The graph simulates a certain number of confidence intervals: it helps determine the percentage of values falling below a regulatory boundary
+```Python
+import numpy as np
+from equiv_med.CI import ci_find_margin
+variab=np.random.normal(loc = 10, scale = 2.3, size = (100,))
+margin=np.mean(variab)
+margin_help=ci_find_margin.Id_margin(variab)
+# Simulating Coefficient of Variation (known variability between measurements)
+margin_help.decision_perc(9.75,noise_variability=0.05) # regulatory boundary inserted by user is 9.75
 ```
