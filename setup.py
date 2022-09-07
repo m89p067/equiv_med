@@ -10,14 +10,14 @@ requirements = [
 test_requirements = ["pytest>=3"]
 #version = __version__
 setup(
-    name='equivmed',
+    name='equiv_med',
     version='0.11',
     author='Mauro Nascimben',
     author_email='msnascimben@gmail.com',
     python_requires=">=3.6",
     description='Functions for clinical equivalence testing',
-    url='https://github.com/m89p067/equivmed',
-    packages=find_packages(include=["equivmed", "equivmed.*"]),
+    url='https://github.com/m89p067/equiv_med',
+    packages=find_packages(include=["equiv_med", "equiv_med.*"]),
     install_requires=requirements,
     #version=__version__,
 )
