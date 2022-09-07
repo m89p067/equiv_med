@@ -1,4 +1,4 @@
-# equiv_med
+# equivmed
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6504217.svg)](https://doi.org/10.5281/zenodo.6504217)<br />
 Python functions for clinical **equivalence testing**. An overview is provided below:<br />
 
