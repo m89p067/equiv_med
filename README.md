@@ -17,7 +17,7 @@ M. Nascimben and L. Rimondini <br />
 *Visually enhanced python function for equality of measurement assessment*<br />
 Presented during the IEEE Fedcsis 2022 conference (4-7 September, Sofia, Bulgaria)<br />
 
-#Minimal working examples
+# Minimal working examples
 ## Bland-Altman revised plot
 ```Python
 import numpy as np
@@ -31,4 +31,18 @@ my_BA=eq_BA.BA_analysis(var1,var2)
 my_BA.run_analysis() # default 95% of the difference will lie in this interval
 #In case of repeated measures
 my_BA.minimal_detectable_change() #output also Minimal Detectable Change 
+```
+
+## Regression residuals diagnostics 
+Creates a linear model old vs. new methodology and evaluates the residuals
+```Python
+import numpy as np
+from equivmed.EQU import eq_Regr
+mu1,sigma1=100.2,62.6
+mu2,sigma2=130.9,80.2
+var1= np.random.normal(mu1, sigma1, 300)
+var2= np.random.normal(mu2, sigma2, 300)
+my_regr=eq_Regr.Regr_diagn(var1,var2)
+my_regr.run_diagnostic([0.05,0.1,0.2]) # Cook values
+my_regr.influential_points() #DIFFITS & DFBETAS with default thresholds
 ```
