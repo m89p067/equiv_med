@@ -52,3 +52,13 @@ my_regr=eq_Regr.Regr_diagn(var1,var2)
 my_regr.run_diagnostic([0.05,0.1,0.2]) # Cook values
 my_regr.influential_points() #DIFFITS & DFBETAS with default thresholds
 ```
+
+## CatEyes plots 
+Confidence interval visualization and comparison graph (as in [11])
+```Python
+from equiv_med.CI import ci_Cateyes
+my_ce=ci_Cateyes.Cat_Eye_2var(var1,var2)
+my_ce.run_ce(95) # C.I. value
+my_ce.run_ce_unbiased(95) # C.I. value
+my_ce.single_cat_eye(var1,95) # C.I. value
+```
