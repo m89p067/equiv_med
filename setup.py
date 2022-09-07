@@ -1,4 +1,11 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+requirements = [
+    "torch>=1.1.0",
+    "scipy",
+    "matplotlib",
+    "numpy>=1.17",
+]
+
 setup(
     name='equivmed',
     version='0.11',
