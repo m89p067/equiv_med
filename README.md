@@ -18,7 +18,7 @@ M. Nascimben and L. Rimondini <br />
 Presented during the IEEE Fedcsis 2022 conference (4-7 September, Sofia, Bulgaria)<br />
 
 # Minimal working examples
-## Create two random vectors simulating the outputs of a new and an old device (or data from two assays, two drugs, two equipments or organic samples). One might be reference method or a gold-standard
+Create two random vectors simulating the outputs of a new and an old device (could be also data from two assays, two drugs, two equipments or organic samples). One might be reference method or a gold-standard
 ```Python
 import numpy as np
 mu1,sigma1=100.2,62.6
