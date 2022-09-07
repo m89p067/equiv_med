@@ -17,7 +17,8 @@ M. Nascimben and L. Rimondini <br />
 *Visually enhanced python function for equality of measurement assessment*<br />
 Presented during the IEEE Fedcsis 2022 conference (4-7 September, Sofia, Bulgaria)<br />
 
-# Minimal working examples
+# **Minimal working examples**
+## Equivalence and agreement between measurements
 Create two random vectors simulating the outputs of a new and an old device (could be also data from two assays, two drugs, two equipments or organic samples). One might be reference method or a gold-standard
 ```Python
 import numpy as np
@@ -26,8 +27,6 @@ mu2,sigma2=130.9,80.2
 var1= np.random.normal(mu1, sigma1, 300)
 var2= np.random.normal(mu2, sigma2, 300)
 ```
-
-## Equivalence and agreement between measurements
 ### Bland-Altman revised plot
 Evalutes the laboratory outputs of two devices or values of two organic samples and checks the agreement
 ```Python
@@ -104,7 +103,7 @@ test_a=Tost_Alt.TOST_T(var1,var2)
 test_a.run_TOST_T()
 test_a.run_TOST_MW()
 ```
-TOST implemented as in ()
+TOST implemented as in [19] for paired measurements
 ```Python
 from equiv_med.EIS import Tost_NCP
 tost_res=Tost_NCP.Tost_paired(var1,var2,5.5)
@@ -112,6 +111,90 @@ tost_res.run_tost()
 tost_res.stat_power()
 tost_res.opt_sample_size()
 ```
+
+### Non-Inferiority and Superiority tests
+Both methods follow [21]
+```Python
+from equiv_med.EIS import Inf_or_Sup
+# Testing Non - Inferiority
+infer=Inf_or_Sup.IoS(var1,var2)
+infer.non_inferiority(ni_bound=0.1)
+infer.non_inferiority(ni_bound=0.65)
+print('\n')
+# Superiority
+sup=Inf_or_Sup.IoS(var1,var2)
+sup.superiority(sup_bound=0)
+sup.superiority(sup_bound=0.3575)
+```
+
+### Region of practical equivalence
+Region of practical equivalence (i.e. ROPE) as in [22]
+```Python
+from equiv_med.EIS import ROPE_test
+out2=ROPE_test.ROPE(var1, rope_range=[-0.3,0.3])
+out2.rope_calc()
+```
+## Novel laboratory test evaluation
+Simulate disease status and laboratory test outcomes for ten patients assuming 0s mean negative results and 1s mean postive results
+```Python
+import numpy as np
+disease_labels=np.asarray([1,1,1,1,0,0,0,0,0,0])
+diagnostic_results=np.asarray([1,1,0,1,1,0,0,1,0,0])
+```
+### 2x2 frequency table and performance indexes
+Contingency Table creation, performance indexes calculation and their comparisons with graphs
+```Python
+from equiv_med.ROC import Frequency_table as fr_tb
+from equiv_med.ROC import Radars
+ft=fr_tb.Freq_table(diagnostic_results,disease_labels) # Cross-table
+out=ft.performance_indexes() # Performance indexes calculation
+print(out) # printing performance indexes
+```
+Performance indexes are:
+* Subjects with the disease TP+FN  
+* Subjects without the disease TN+FP  
+* True positive fraction aka Sensitivity  
+* False Negative Fraction aka 1-Sensitivity  
+* True Negative Fraction aka Specificity  
+* False Positive Fraction aka 1-Specificity  
+* Positive Predictive Value  
+* Negative Predictive Value  
+* Positive Likelihood Ratio  
+* Negative Likelihood Ratio  
+* Diagnostic Odds Ratio  
+* Diagnostic effectiveness (accuracy)  
+* Youden index  
+* Cohen kappa coefficient  
+* Balanced accuracy  
+* Error rate  
+* False negative rate  
+* True negative rate  
+* False positive rate  
+* False discovery rate  
+* False omission rate  
+* Precision  
+* Recall  
+* F-measure (aka F1-score or simply F-score)  
+* G measure  
+* Matthews correlation coefficient  
+* Bookmaker informedness  
+* Markedness  
+* Number necessary to test 
+* Number necessary to diagnose  
+* Critical success index  
+* Prevalence  
+* Prevalence threshold  
+* Fowlkes–Mallows index  
+* Bias  
+They can be compared using Radar plots. User should provide a list of indexes (names will be abbreviated on the plots)
+```Python
+indexes_list=['Error rate','Recall','G measure','Prevalence', 'False discovery rate','Recall']
+rdr2=Radars.Radar_plots(indexes_list)
+rdr2.radar_plots(out,out2,overlapping=True) # Radar plot
+rdr4=Radars.Radar_plots(indexes_list,print_abbr=True)
+rdr4.polar_bars(out,out2) # Second type of graph
+```
+
 ## Special case functions
 ### Stacked representations of confidence intervals 
 The graph simulates a certain number of confidence intervals: it helps determine the percentage of values falling below a regulatory boundary
