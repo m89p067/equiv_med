@@ -66,7 +66,27 @@ my_ce.single_cat_eye(var1,95) # C.I. value
 ```
 
 ### Cohen's d
+Effect size (automatic calculation of the right formula based on input data) and visualization
+```Python
+from equiv_med.ES import Cohen_family
+D_meas=Cohen_family.Cohen_es(var1,var2,design='indep')
+print('Cohen D :', D_meas.Cohen_d())
+print('Lambda parameter (non centrality) :', D_meas.lambda_par())
+print('Variance of Cohen D :',D_meas.standard_error_cohen() )
+print('CI :',D_meas.CI_cohen())
+D_meas.nonoverlap_measures()
+D_meas.plotting()
+```
 
+### Standard TOST
+Equivalence testing
+```Python
+from equiv_med.EIS import Standard_Tost
+eq_tost=Standard_Tost.EQU(var1,var2,-5.5,5.5) # [-5.5;5.5] are the user-defined regulatory boundaries simmetric to zero
+eq_tost.run_Tost_indep() # Independent samples
+eq_tost=Standard_Tost.EQU(var1,var2,-5.5,5.5) # [-5.5;5.5] are the user-defined regulatory boundaries simmetric to zero
+eq_tost.run_Tost_dep() # Dependent samples
+```
 
 ## Special case functions
 ### Stacked representations of confidence intervals 
