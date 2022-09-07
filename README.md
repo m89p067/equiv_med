@@ -134,7 +134,7 @@ from equiv_med.EIS import ROPE_test
 out2=ROPE_test.ROPE(var1, rope_range=[-0.3,0.3])
 out2.rope_calc()
 ```
-## Novel laboratory test evaluation
+## Laboratory test evaluation
 Simulate disease status and laboratory test outcomes for ten patients assuming 0s mean negative results and 1s mean postive results
 ```Python
 import numpy as np
@@ -145,7 +145,6 @@ diagnostic_results=np.asarray([1,1,0,1,1,0,0,1,0,0])
 Contingency Table creation, performance indexes calculation and their comparisons with graphs
 ```Python
 from equiv_med.ROC import Frequency_table as fr_tb
-from equiv_med.ROC import Radars
 ft=fr_tb.Freq_table(diagnostic_results,disease_labels) # Cross-table
 out=ft.performance_indexes() # Performance indexes calculation
 print(out) # printing performance indexes
@@ -186,13 +185,52 @@ Performance indexes are:
 * Prevalence threshold  
 * Fowlkes–Mallows index  
 * Bias  
-They can be compared using Radar plots. User should provide a list of indexes (names will be abbreviated on the plots)
+
+These indexes from two devices or laboratory tests be compared using Radar plots. User should provide a list of indexes (names will be abbreviated on the plots)
 ```Python
-indexes_list=['Error rate','Recall','G measure','Prevalence', 'False discovery rate','Recall']
+from equiv_med.ROC import Radars
+# user-defined indexes included in the radar plots
+indexes_list=['Error rate','Recall','G measure','Prevalence', 'False discovery rate','Recall'] 
 rdr2=Radars.Radar_plots(indexes_list)
 rdr2.radar_plots(out,out2,overlapping=True) # Radar plot
 rdr4=Radars.Radar_plots(indexes_list,print_abbr=True)
-rdr4.polar_bars(out,out2) # Second type of graph
+rdr4.polar_bars(out,out2) # Second type of graph using bars
+```
+
+### ROC curves
+In this example the ROC curve is created using the columns "texture_mean" and "diagnosis_category" of the Breast Cancer Wisconsin (Diagnostic) Data Set.
+```Python
+from equiv_med.ROC import Roc_youden
+out_roc=Roc_youden.Youden_Roc(texture_mean, diagnosis_category)
+out_roc.plot_roc_youden()
+```
+Statistical test for independent and dependent ROCs evaluation using DeLong method (test hypothesis that the ROC curves are equal [25])
+```Python
+# not providing real data in this example
+from equiv_med.ROC import DeLong_independent
+from equiv_med.ROC import DeLong_dependent
+dl_data=DeLong_independent.DeLong_indep(true_labels1,probab1,true_labels2,probab2) 
+dl_data.dl_indep()
+dl_data2=DeLong_dependent.DeLong_dep(true_labels1,probab1,probab2)
+dl_data2.dl_dep()
+```
+Statistical test for independent and dependent ROCs evaluation using Venkatraman method [26,27] over all operating points
+```Python
+# not providing real data in this example
+venk=Venkatraman_independent.Venkatraman_indep(true_labels1,probab1,true_labels2,probab2)
+venk.v_indep(2000) # number of bootstrap replicates
+venk=Venkatraman_dependent.Venkatraman_dep(true_labels,probab1,probab2)
+venk.v_dep(2000) # number of bootstrap replicates
+venk.do_plot(5000) # number of bootstrap replicates
+```
+
+### Ranking plots
+In this example the Ranking curves are created using the columns "texture_mean" and "diagnosis_category" of the Breast Cancer Wisconsin (Diagnostic) Data Set.
+```Python
+from equiv_med.ROC import Ranking
+out1=Ranking.Ranking_plots(texture_mean, diagnosis_category)
+out1.ranking_plot() # includes Kolmogorov-Smirnov stats
+out1.calculate_AP()
 ```
 
 ## Special case functions
