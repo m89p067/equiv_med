@@ -88,6 +88,30 @@ eq_tost=Standard_Tost.EQU(var1,var2,-5.5,5.5) # [-5.5;5.5] are the user-defined 
 eq_tost.run_Tost_dep() # Dependent samples
 ```
 
+### Special implementation of TOST tests
+TOST implemented as in [20]
+```Python
+from equiv_med.EIS import Tost_WS
+out1=Tost_WS.WS_eq(var1,var2,5)
+out1.run_TOST()
+out1.power_TOST()
+out1.opt_sample_size()
+```
+TOST implemented as in [17,18]
+```Python
+from equiv_med.EIS import Tost_Alt
+test_a=Tost_Alt.TOST_T(var1,var2)
+test_a.run_TOST_T()
+test_a.run_TOST_MW()
+```
+TOST implemented as in ()
+```Python
+from equiv_med.EIS import Tost_NCP
+tost_res=Tost_NCP.Tost_paired(var1,var2,5.5)
+tost_res.run_tost()
+tost_res.stat_power()
+tost_res.opt_sample_size()
+```
 ## Special case functions
 ### Stacked representations of confidence intervals 
 The graph simulates a certain number of confidence intervals: it helps determine the percentage of values falling below a regulatory boundary
