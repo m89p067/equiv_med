@@ -10,8 +10,9 @@ The repository contains Python functions to produce novel graphs for biomedical 
 ```Python
 pip install git+https://github.com/m89p067/equiv_med
 ```
+Please check pip, git and setuptools are properly installed on your system.
 
 # Explanations, references, and examples included in:<br />
 M. Nascimben and L. Rimondini <br />
 *Visually enhanced python function for equality of measurement assessment*<br />
-Accepted by IEEE Fedcsis 2022 conference<br />
+Presented during the IEEE Fedcsis 2022 conference (4-7 September, Sofia, Bulgaria)<br />
