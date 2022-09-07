@@ -73,7 +73,7 @@ print('Cohen D :', D_meas.Cohen_d())
 print('Lambda parameter (non centrality) :', D_meas.lambda_par())
 print('Variance of Cohen D :',D_meas.standard_error_cohen() )
 print('CI :',D_meas.CI_cohen())
-D_meas.nonoverlap_measures()
+D_meas.nonoverlap_measures() # Cohen U indexes
 D_meas.plotting()
 ```
 
@@ -244,4 +244,48 @@ margin=np.mean(variab)
 margin_help=ci_find_margin.Id_margin(variab)
 # Simulating Coefficient of Variation (known variability between measurements)
 margin_help.decision_perc(9.75,noise_variability=0.05) # regulatory boundary inserted by user is 9.75
+```
+
+### Inherent imprecision
+Laboratory errors can be subdivided in systematic and random errors. Random errors can be evaluated in terms of imprecision (script includes automatic Chebyshev interval adjustment) between a routine methodology (or a gold-standard) and a new method.
+```Python
+from equiv_med.EQU import eq_ICI
+# Need to know coefficient of variation from each laboratory method (Routine_method and New_method)
+my_ici=eq_ICI.ICI_bounds(Routine_method,New_method,paired=False) #Routine_method,New_method are two vectors of values from the lab tests
+my_ici.run_ICI(2,4) # corff. of variation for Routine_method and New_method
+```
+
+### Re-testing minimal detectable change
+Calculation of the minimal detectable change between two sets of measurements collected at different times (for example at t0 and t1)
+```Python
+from equiv_med.ES import Repeated
+import numpy as np
+mu2,sigma2=3.35, 1.15
+mu1,sigma1=3.4,1.2
+var1=np.random.normal(mu1, sigma1, 1000)
+var2=np.random.normal(mu2, sigma2, 1000)
+rep=Repeated.Retesting(var1,var2)
+rep.mdc()
+```
+
+### Responsiveness analysis
+Requires measurements at two time points (t1 and t2): the first two inputs of _Responsiveness_ are baseline/control measurement at t1 and t2 (aka, control_t1,control_t2), while second sets of inputs are the treatment/improved measurement at t1 and t2 (aka, treatment_t1,treatment_t2)
+```Python
+# not providing real data in this example
+from equiv_med.ES import Responsiveness
+out=Responsiveness.Responsiveness(control_t1,control_t2,treatment_t1,treatment_t2)
+out.grc() # Guyatt’s responsiveness coefficient
+out.srm() # Standardized response mean
+out.rci() # Jacobson Reliable change index
+out.es() # Effect Size
+out.nr() # Normalized ratio
+out.ses() # Standardized effect size
+```
+
+### Cohen non-overlapping indexes
+```Python
+from equiv_med.ES import Cohen_family
+D_meas=Cohen_family.Cohen_es(var1,var2,design='indep')
+D_meas.nonoverlap_measures()
+D_meas.nonoverlap_plotting()
 ```
