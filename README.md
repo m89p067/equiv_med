@@ -19,6 +19,7 @@ Presented during the IEEE Fedcsis 2022 conference (4-7 September, Sofia, Bulgari
 
 # Minimal working examples
 ## Bland-Altman revised plot
+Evalutes the laboratory outputs of two devices or values of two organic samples and checks the agreement
 ```Python
 import numpy as np
 from equivmed.EQU import eq_BA
@@ -28,7 +29,7 @@ var1= np.random.normal(mu1, sigma1, 300)
 var2= np.random.normal(mu2, sigma2, 300)
 my_BA=eq_BA.BA_analysis(var1,var2)
 #Bland-Altman plot
-my_BA.run_analysis() # default 95% of the difference will lie in this interval
+my_BA.run_analysis() # default 95% of the difference will lie in this interval [revised plot]
 #In case of repeated measures
 my_BA.minimal_detectable_change() #output also Minimal Detectable Change 
 ```
