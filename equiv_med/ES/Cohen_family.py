@@ -4,7 +4,7 @@ from statistics import stdev,variance
 from math import sqrt,lgamma,exp
 from scipy.stats.kde import gaussian_kde
 from matplotlib import pyplot as plt
-from Cohen.find_inters import intersection
+from ES.find_inters import intersection
 from scipy.special import gamma
 
 class Cohen_es:
