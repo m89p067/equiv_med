@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 #__version__ = '0.11'
 requirements = [
-    "scipy>=1.7.3",
+    "scipy>=1.8.0",
     "numpy>=1.22.1",
     "matplotlib>=3.4.2",
     "seaborn>=0.11.1",
-    "statsmodels>=0.12.2",
+    "statsmodels>=0.13.2",
 ]
 test_requirements = ["pytest>=3"]
 #version = __version__
