@@ -78,7 +78,7 @@ d_meas.plotting()
 ```
 
 ### Standard TOST
-Please refer to the following image for a quick understanding of equivalence, non-inferiority and superiority tests using differential confidence intervals
+Please refer to the following image for a quick understanding of equivalence, non-inferiority and superiority tests using differential confidence intervals and user-defined regulatory boundaries $\pm \delta$
 ![Eq_scheme](eq_low.png)
 
 Equivalence testing by TOST
