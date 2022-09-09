@@ -82,7 +82,7 @@ D_meas.plotting()
 Please refer to the following image for a quick understanding of equivalence, non-inferiority and superiority tests using differential confidence intervals
 ![Eq_scheme](eq_low.png)
 
-Equivalence testing
+Equivalence testing by TOST
 ```Python
 from equiv_med.EIS import Standard_Tost
 eq_tost=Standard_Tost.EQU(var1,var2,-5.5,5.5) # [-5.5;5.5] are the user-defined regulatory boundaries simmetric to zero
