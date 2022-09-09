@@ -121,7 +121,7 @@ tost_res.opt_sample_size()
 Non-inferiority hypothesis testing 
 $$H_{0} : \overline{m_{1}}-\overline{m_{2}}\leq-\delta$$
 $$H_{1} : \overline{m_{1}}-\overline{m_{2}}>-\delta$$
-Superiority hypothesis testing 
+Superiority hypothesis testing (usually setting $\delta = 0$)
 $$H_{0} : \overline{m_{1}}-\overline{m_{2}}\geq\delta$$
 $$H_{1} : \overline{m_{1}}-\overline{m_{2}}<\delta$$
 
