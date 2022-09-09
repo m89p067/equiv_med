@@ -28,7 +28,7 @@ class Responsiveness():
         self.t2=np.asarray(treatment_t2)
     def grc(self):
         # Guyatt’s responsiveness coefficient
-        # measures of responsiveness to change
+        # a measure of responsiveness to change
         if Responsiveness.is_normal :
             grc=(np.mean(self.t2)-np.mean(self.t1))/stdev(self.c2-self.c1)
         else:
