@@ -272,7 +272,7 @@ rep=Repeated.Retesting(var1,var2)
 rep.mdc()
 ```
 
-### Responsiveness analysis
+### Responsiveness to change analysis
 Requires biomarkers at two time points (t1 and t2): the first two inputs of _Responsiveness_ are baseline/control measurements at t1 and t2 (aka, control_t1,control_t2), while second sets of inputs are the treatment/improved measurements at t1 and t2 (aka, treatment_t1,treatment_t2)
 ```Python
 # not providing real data in this example
