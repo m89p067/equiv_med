@@ -143,7 +143,7 @@ sup.superiority(sup_bound=0.3575)
 Region of practical equivalence (i.e. ROPE) as in [22]
 ```Python
 from equiv_med.EIS import ROPE_test
-out2=ROPE_test.ROPE(var1, rope_range=[-0.3,0.3])
+out2=ROPE_test.ROPE(var1, rope_range=[-0.3,0.3]) #user-defined ROPE region [-0.3,0.3]
 out2.rope_calc()
 ```
 ## Laboratory test evaluation
