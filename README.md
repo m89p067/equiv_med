@@ -69,13 +69,13 @@ my_ce.single_cat_eye(var1,95) # C.I. value
 Effect size (automatic calculation of the right formula based on input data) and visualization
 ```Python
 from equiv_med.ES import Cohen_family
-D_meas=Cohen_family.Cohen_es(var1,var2,design='indep')
-print('Cohen D :', D_meas.Cohen_d())
-print('Lambda parameter (non centrality) :', D_meas.lambda_par())
-print('Variance of Cohen D :',D_meas.standard_error_cohen() )
-print('CI :',D_meas.CI_cohen())
-D_meas.nonoverlap_measures() # Cohen U indexes
-D_meas.plotting()
+d_meas=Cohen_family.Cohen_es(var1,var2,design='indep')
+print('Cohen d :', d_meas.Cohen_d())
+print('Lambda parameter (non centrality) :', d_meas.lambda_par())
+print('Variance of Cohen d :',d_meas.standard_error_cohen() )
+print('CI :',d_meas.CI_cohen())
+d_meas.nonoverlap_measures() # Cohen U indexes
+d_meas.plotting()
 ```
 
 ### Standard TOST
