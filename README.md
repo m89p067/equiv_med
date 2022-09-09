@@ -289,7 +289,7 @@ out.ses() # Standardized effect size
 ### Cohen non-overlapping indexes
 ```Python
 from equiv_med.ES import Cohen_family
-D_meas=Cohen_family.Cohen_es(var1,var2,design='indep')
-D_meas.nonoverlap_measures()
-D_meas.nonoverlap_plotting()
+d_meas=Cohen_family.Cohen_es(var1,var2,design='indep')
+d_meas.nonoverlap_measures()
+d_meas.nonoverlap_plotting()
 ```
