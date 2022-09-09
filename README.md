@@ -81,7 +81,7 @@ d_meas.plotting()
 Please refer to the following image for a quick understanding of equivalence, non-inferiority and superiority tests using differential confidence intervals and user-defined regulatory boundaries $\pm \delta$
 ![Eq_scheme](eq_low.png)
 
-Equivalence testing by TOST
+Equivalence testing 
 $$H_{0} : \overline{m_{1}}-\overline{m_{2}}\leq-\delta\quad or\quad \overline{m_{1}}-\overline{m_{2}}\geq\delta $$
 $$H_{1} : -\delta<\overline{m_{1}}-\overline{m_{2}}<\delta$$
 ```Python
