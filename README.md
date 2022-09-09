@@ -74,7 +74,7 @@ print('Cohen d :', d_meas.Cohen_d())
 print('Lambda parameter (non centrality) :', d_meas.lambda_par())
 print('Variance of Cohen d :',d_meas.standard_error_cohen() )
 print('CI :',d_meas.CI_cohen())
-d_meas.plotting()
+d_meas.plotting() # Cohen d descriptive graph
 ```
 
 ### Standard TOST
@@ -238,6 +238,8 @@ venk.do_plot(5000) # number of bootstrap replicates
 
 ### Ranking plots
 In this example the Ranking curves are created using the columns "texture_mean" and "diagnosis_category" of the Breast Cancer Wisconsin (Diagnostic) Data Set.
+- precision vs. recall plot (with AUC)
+- true positive vs. false positive rates graph (with Kolmogorov-Smirnov statistic in the standard and truncated forms)
 ```Python
 from equiv_med.ROC import Ranking
 out1=Ranking.Ranking_plots(texture_mean, diagnosis_category)
