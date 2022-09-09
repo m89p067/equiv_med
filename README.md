@@ -273,11 +273,11 @@ rep.mdc()
 ```
 
 ### Responsiveness analysis
-Requires measurements at two time points (t1 and t2): the first two inputs of _Resp_indexes_ are baseline/control measurement at t1 and t2 (aka, control_t1,control_t2), while second sets of inputs are the treatment/improved measurement at t1 and t2 (aka, treatment_t1,treatment_t2)
+Requires measurements at two time points (t1 and t2): the first two inputs of _Responsiveness_ are baseline/control measurement at t1 and t2 (aka, control_t1,control_t2), while second sets of inputs are the treatment/improved measurement at t1 and t2 (aka, treatment_t1,treatment_t2)
 ```Python
 # not providing real data in this example
-from equiv_med.ES import Responsiveness
-out=Responsiveness.Resp_indexes(control_t1,control_t2,treatment_t1,treatment_t2)
+from equiv_med.ES import Resp_indexes
+out=Resp_indexes.Responsiveness(control_t1,control_t2,treatment_t1,treatment_t2)
 out.grc() # Guyatt’s responsiveness coefficient
 out.srm() # Standardized response mean
 out.rci() # Jacobson Reliable change index
