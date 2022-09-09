@@ -74,7 +74,6 @@ print('Cohen d :', d_meas.Cohen_d())
 print('Lambda parameter (non centrality) :', d_meas.lambda_par())
 print('Variance of Cohen d :',d_meas.standard_error_cohen() )
 print('CI :',d_meas.CI_cohen())
-d_meas.nonoverlap_measures() # Cohen U indexes
 d_meas.plotting()
 ```
 
@@ -290,6 +289,6 @@ out.ses() # Standardized effect size
 ```Python
 from equiv_med.ES import Cohen_family
 d_meas=Cohen_family.Cohen_es(var1,var2,design='indep')
-d_meas.nonoverlap_measures()
+d_meas.nonoverlap_measures() # Cohen U indexes
 d_meas.nonoverlap_plotting()
 ```
