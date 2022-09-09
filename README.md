@@ -15,7 +15,7 @@ Please check pip, git and setuptools are properly installed on your system.
 # Explanations, references, and examples included in:<br />
 M. Nascimben and L. Rimondini <br />
 *Visually enhanced python function for equality of measurement assessment*<br />
-Presented during the IEEE Fedcsis 2022 conference (4-7 September, Sofia, Bulgaria)<br />
+Presented during the IEEE FedCSIS 2022 conference (4-7 September, Sofia, Bulgaria)<br />
 The peer-reviewed conference paper will soon be available in "Annals of Computer Science and Information Systems" (ACSIS)
 
 # **Minimal working examples**
