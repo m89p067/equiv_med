@@ -2,7 +2,7 @@ import numpy as np
 import scipy.stats as stats
 from statistics import stdev
 from math import sqrt
-class Resp_indexes():
+class Responsiveness():
     is_normal=True
     same_var=True
     def __init__(self,control_t1,control_t2,treatment_t1,treatment_t2):
