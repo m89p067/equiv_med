@@ -20,7 +20,7 @@ The peer-reviewed conference paper will soon be available in "Annals of Computer
 
 # **Minimal working examples**
 ## Equivalence and agreement between measurements
-Create two random vectors simulating the outputs of a new and an old device (could be also data from two assays, two drugs, two equipments or organic samples). One might be a reference method or a gold-standard, and the other a new device or data collected collected employing a new procedure.
+Create two random vectors simulating the outputs of a new and an old device (could be also data from two assays, two drugs, two equipments or organic samples). One might be a reference method or a gold-standard, and the other a new device or data collected employing a new procedure.
 ```Python
 import numpy as np
 mu1,sigma1=100.2,62.6
