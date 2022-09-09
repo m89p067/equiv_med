@@ -118,7 +118,7 @@ tost_res.opt_sample_size()
 ```
 
 ### Non-Inferiority and Superiority tests
-Non-inferiority hypothesis testing 
+Non-inferiority hypothesis testing (might be in the reversed form)
 $$H_{0} : \overline{m_{1}}-\overline{m_{2}}\leq-\delta$$
 $$H_{1} : \overline{m_{1}}-\overline{m_{2}}>-\delta$$
 Superiority hypothesis testing (usually setting $\delta = 0$)
