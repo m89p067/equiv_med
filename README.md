@@ -79,8 +79,9 @@ D_meas.plotting()
 ```
 
 ### Standard TOST
-Please refer to this image for a quick understannding of equivalence, non-inferiority and superiority test
-![Eq_scheme](eq_i_s.png)
+Please refer to the following image for a quick understanding of equivalence, non-inferiority and superiority tests using differential confidence intervals
+![Eq_scheme](eq_low.png)
+
 Equivalence testing
 ```Python
 from equiv_med.EIS import Standard_Tost
