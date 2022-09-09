@@ -12,15 +12,15 @@ class Responsiveness():
         stat, p = stats.levene(control_t1,control_t2,treatment_t1,treatment_t2)
         if p<0.05:
             print('Input measurements do not have equal variances')
-            Retesting.same_var=False
+            Responsiveness.same_var=False
         shapiro_test1 = stats.shapiro(control_t1)
         shapiro_test2 = stats.shapiro(control_t2)
         shapiro_test3 = stats.shapiro(treatment_t1)
         shapiro_test4 = stats.shapiro(treatment_t2)
         if shapiro_test1.pvalue>0.05 and shapiro_test2.pvalue>0.05 and shapiro_test3.pvalue>0.05 and shapiro_test4.pvalue>0.05:
-            Retesting.is_normal=True            
+            Responsiveness.is_normal=True            
         else:
-            Retesting.is_normal=False
+            Responsiveness.is_normal=False
             print('Input measurements are not normally distributed')
         self.c1=np.asarray(control_t1)
         self.c2=np.asarray(control_t2)
@@ -29,7 +29,7 @@ class Responsiveness():
     def grc(self):
         # Guyatt’s responsiveness coefficient
         
-        if Retesting.is_normal :
+        if Responsiveness.is_normal :
             grc=(np.mean(self.t2)-np.mean(self.t1))/stdev(self.c2-self.c1)
         else:
             print('Computation discouraged cause not normally distributed data')
@@ -40,7 +40,7 @@ class Responsiveness():
         # Variability in change scores
         total_t1=np.concatenate((self.c1,self.t1))
         total_t2=np.concatenate((self.c2,self.t2))
-        if Retesting.is_normal:
+        if Responsiveness.is_normal:
             srm=(np.mean(total_t2)-np.mean(total_t1))/stdev(total_t2-total_t1)
         else:
             print('Computation discouraged cause not normally distributed data')
@@ -51,7 +51,7 @@ class Responsiveness():
         # Include factor 1.96 as regularization term
         total_t1=np.concatenate((self.c1,self.t1))
         total_t2=np.concatenate((self.c2,self.t2))
-        if Retesting.is_normal:
+        if Responsiveness.is_normal:
             rci=(np.mean(total_t2)-np.mean(total_t1))/(1.96*stdev(total_t2-total_t1))
         else:
             print('Computation discouraged cause not normally distributed data')
@@ -61,7 +61,7 @@ class Responsiveness():
         # Effect size
         total_t1=np.concatenate((self.c1,self.t1))
         total_t2=np.concatenate((self.c2,self.t2))
-        if Retesting.is_normal:
+        if Responsiveness.is_normal:
             es=(np.mean(total_t2)-np.mean(total_t1))/stdev(total_t1)
         else:
             print('Computation discouraged cause not normally distributed data')
@@ -69,7 +69,7 @@ class Responsiveness():
         return es
     def nr(self):
         # Normalized ratio
-        if Retesting.is_normal:
+        if Responsiveness.is_normal:
             nr=(np.mean(self.t2)-np.mean(self.t1))/stdev(self.c1)
         else:
             print('Computation discouraged cause not normally distributed data')
@@ -77,7 +77,7 @@ class Responsiveness():
         return nr        
     def ses(self):
         # Standardized effect size
-        if Retesting.is_normal:
+        if Responsiveness.is_normal:
             ses=(np.mean(self.t2)-np.mean(self.t1))/stdev(self.t1)
         else:
             print('Computation discouraged cause not normally distributed data')
