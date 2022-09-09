@@ -1,10 +1,10 @@
-# equiv_med, biosimilarity Python functions
+# equiv_med
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6504217.svg)](https://doi.org/10.5281/zenodo.6504217)<br />
 Python functions for clinical **equivalence testing**. An overview is provided in the following figure:<br />
 
 ![Function_Overview](/schema2.png)
 
-The repository contains Python functions to produce novel graphs for biomedical equivalence testing. Visualization enhances the interpretation and storytelling of statistical tests. Each function automatically checks the preliminary assumptions of the tests and is paired with console outputs. The scripts were subdivided into four macro-areas following the scheme in the figure. Users interested in running bio-similarity analysis can download the code and follow the instructions in the referenced manuscript or the minimal working examples.
+The repository contains Python functions to produce novel graphs for biomedical biosimilarity testing. Visualization enhances the interpretation and storytelling of statistical tests. Each function automatically checks the preliminary assumptions of the tests and is paired with console outputs. The scripts were subdivided into four macro-areas following the scheme in the figure. Users interested in running bio-similarity analysis can download the code and follow the instructions in the referenced manuscript or the minimal working examples.
 
 # Installation
 ```Python
