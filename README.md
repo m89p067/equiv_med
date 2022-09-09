@@ -47,11 +47,11 @@ my_BA.minimal_detectable_change() #output also Minimal Detectable Change
 ```
 
 ### Regression residuals diagnostics 
-Creates a linear model old vs. new methodology and evaluates the residuals
+Creates a linear model old vs. new methodology and evaluates the residuals for influential points evaluation
 ```Python
 from equiv_med.EQU import eq_Regr
 my_regr=eq_Regr.Regr_diagn(var1,var2)
-my_regr.run_diagnostic([0.05,0.1,0.2]) # Cook values
+my_regr.run_diagnostic([0.05,0.1,0.2]) # Cook distances values 
 my_regr.influential_points() #DIFFITS & DFBETAS with default thresholds
 ```
 
