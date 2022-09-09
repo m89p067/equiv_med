@@ -194,7 +194,7 @@ These indexes from two devices or laboratory tests could be compared using Radar
 ```Python
 from equiv_med.ROC import Radars
 # user-defined indexes included in the radar plots
-indexes_list=['Error rate','Recall','G measure','Prevalence', 'False discovery rate','Recall'] 
+indexes_list=['Error rate','Recall','G measure','Prevalence', 'False discovery rate','Recall'] #list with indexes names (minimal 5 indexes, max 9 indexes)
 rdr2=Radars.Radar_plots(indexes_list)
 rdr2.radar_plots(out,out2,overlapping=True) # Radar plot
 rdr4=Radars.Radar_plots(indexes_list,print_abbr=True)
