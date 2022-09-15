@@ -266,7 +266,7 @@ Laboratory errors can be subdivided in systematic and random errors. Random erro
 from equiv_med.EQU import eq_ICI
 # Need to know coefficient of variation from each laboratory method (Routine_method and New_method)
 my_ici=eq_ICI.ICI_bounds(Routine_method,New_method,paired=False) #Routine_method,New_method are two vectors of values from the lab tests
-my_ici.run_ICI(2,4) # corff. of variation for Routine_method and New_method
+my_ici.run_ICI(2,4) # coeff. of variation for Routine_method and New_method
 ```
 
 ### Re-testing minimal detectable change
