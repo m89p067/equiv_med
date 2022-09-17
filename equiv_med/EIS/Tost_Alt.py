@@ -91,7 +91,7 @@ class TOST_T():
             print("Dealing with normal data")
         else:
             TOST_T.is_normal=False
-    def run_TOST_T(self,alpha = 0.05, marginX = 1.5, sampleSizeX = 1.5):
+    def run_TOST_T(self,alpha = 0.05, marginX = 1.5, sampleSizeX = 1.5,prec=3):
         ''' Fixed margin TOST, requires two parameters as multipliers'''
         smplT = self.x
         smplR = self.y #Reference
@@ -106,7 +106,7 @@ class TOST_T():
         tq = qt( 1 - alpha,  tdf)
         ci = [dm - tq * dsigma, dm + tq * dsigma]
         rslt = np.where(all(abs(np.asarray(ci))/margin <=  1), 1,0)        
-        prec=3
+        
         print('NULL HYPOTHESIS:the difference between the means of two samples are not within a margin')
         print("Diff in means : ", round(dm, prec), ", std ",round(dsigma, prec), ", df ", round(tdf, prec),  ", tq ", round(tq, prec))
         print('Mean Diff. (90% CI) [',round(ci[0], prec),':',round(ci[1], prec),']')
