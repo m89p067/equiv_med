@@ -8,7 +8,12 @@ from matplotlib.patches import Wedge
 from statsmodels.distributions.empirical_distribution import ECDF
 class Youden_Roc:
     def __init__(self, x1,true_labels):
-        ''' ROC visualization with CI, Youden index, K-index and MDI'''
+        ''' 
+        ROC visualization with CI, Youden index, K-index and MDI
+        Args:
+        x1  vector of measurements
+        true_labels binary labels
+        '''
         self.label=true_labels
         self.the_controls = x1[true_labels == 0]
         self.the_cases = x1[true_labels == 1]
