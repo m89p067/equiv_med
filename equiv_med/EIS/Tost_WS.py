@@ -75,7 +75,7 @@ class WS_eq(): #Welch_Satterthwaite
                 print('Keep the NULL hypothesis: CI lie outside the margins of equivalence')
         else:
             print('Violation of normalcy assumption')
-    def power_TOST(self):
+    def power_TOST(self,prec=4):
         
         n1=len(self.x)
         n2=len(self.y)
@@ -125,14 +125,14 @@ class WS_eq(): #Welch_Satterthwaite
               wcpdf=(intlc/3)*coevecc*stats.chi2.pdf(cvec,dft)
               st=np.sqrt(cvec*g[i])*wstavec[i]
               epvec[i]=np.sum(wcpdf*(stats.norm.cdf((-st+del1-mud)/sigmad)-stats.norm.cdf((st-del1 -mud)/sigmad)))
-            prec=4
+            
             wsepower=sum(wbpdf*epvec)
             ntotal=n1+n2
 
             print('Nominal power :',round(wsepower,prec) ,' with sample size of ',round(ntotal,prec))
         else:
             print('Violation of normalcy assumption')
-    def opt_sample_size(self,power=0.8):
+    def opt_sample_size(self,power=0.8,prec=4):
         
         n1=len(self.x)
         n2=len(self.y)
@@ -192,7 +192,7 @@ class WS_eq(): #Welch_Satterthwaite
                     
                 
                 epower=np.sum(np.multiply(wbpdf,epvec))
-            prec=4      
+                  
             ntotal=n1+n2
 
             print('Required sample size :',n1,' and ',n2 ,', Total :',ntotal)
