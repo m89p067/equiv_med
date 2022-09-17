@@ -5,6 +5,7 @@ class DeLong_dep:
     def __init__(self, true_labels1,measurement1,measurement2):
         ''' 
         DeLong stats for dependent measurements
+        Args:
         true_labels1    a vector of 0s and 1s as true labels 
         measurement1,measurement2   two measurement vectors
         '''
