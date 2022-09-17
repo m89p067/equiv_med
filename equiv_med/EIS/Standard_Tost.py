@@ -17,10 +17,16 @@ def pt(q1,df1,ncp=0):
         result=stats.nct.cdf(x=q1,df=df1,nc=ncp,loc=0,scale=1)
     return result
 class EQU():
-    ''' TOST for 2 dep. or indep. measurements, requires equivalence boundaries as input'''
     is_normal=True
     same_var=True
     def __init__(self, x1, y1,low_margin,upper_margin):
+        ''' 
+        TOST for 2 dep. or indep. measurements, requires equivalence boundaries as input
+        Args:
+        x1,y1 laboratory measurements (normally distributed)
+        low_margin lower regulatory boundary -𝛿
+        upper_margin upper regulatory margin +𝛿
+        '''
         print('Testing hypothesis of equivalence')
         self.x = np.asarray(x1)
         self.y = np.asarray(y1)
