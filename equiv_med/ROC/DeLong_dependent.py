@@ -6,7 +6,7 @@ class DeLong_dep:
         ''' 
         DeLong stats for dependent measurements
         true_labels1    a vector of 0s and 1s as true labels 
-        measurement1,measurement2   two measurement binary vectors
+        measurement1,measurement2   two measurement vectors
         '''
         check1=((true_labels1==0) | (true_labels1==1)).all()        
         if check1==False :
