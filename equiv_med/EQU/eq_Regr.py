@@ -8,7 +8,11 @@ from math import sqrt
 class Regr_diagn(eq_base.init_eq):
     is_normal=True
     def __init__(self, x, y):
-        ''' Residuals diagnostics and influential points evaluation'''
+        ''' 
+        Residuals diagnostics and influential points evaluation
+        Args:
+        x,y two laboratory measurements
+        '''
         super().__init__(x, y)
         self.results=self.run_regression()
     def get_cook(self,D):     
