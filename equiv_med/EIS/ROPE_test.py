@@ -9,7 +9,13 @@ class ROPE():
     is_normal=True
     
     def __init__(self, x1, rope_range=[-0.1,0.1],credib_interv=0.95):
-        ''' Region of practical equivalence by equal-tail or highest density intervals'''
+        ''' 
+        Region of practical equivalence by equal-tail or highest density intervals
+        Args:
+        x1  input vector to be tested for equivalence
+        rope_range  ROPE region (default [-0.1,0.1]
+        credib_interv   Credibility interval (default 95% set as 0.95) but could be reduced to 89%
+        '''
         print('Test for Practical Equivalence')
         self.x = np.asarray(x1)
         
