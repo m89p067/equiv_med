@@ -3,7 +3,11 @@ from scipy import stats
 from math import sqrt
 class DeLong_dep:      
     def __init__(self, true_labels1,measurement1,measurement2):
-        ''' DeLong stats: a vector of 0s and 1s as true labels and then two measurement labels'''
+        ''' 
+        DeLong stats for dependent measurements
+        true_labels1    a vector of 0s and 1s as true labels 
+        measurement1,measurement2   two measurement binary vectors
+        '''
         check1=((true_labels1==0) | (true_labels1==1)).all()        
         if check1==False :
             print('Please check both labels contain binary values')
