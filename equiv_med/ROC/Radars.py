@@ -5,7 +5,7 @@ import pandas as pd
 class Radar_plots:      
     def __init__(self,indexes_list,print_abbr=False):
         ''' 
-        Radar plots for series of indexes
+        Radar plots for series of indexes created by Frequency_table
         Args:
         indexes_list    a list with index names (follow nomenclature)
         print_abbr  prints a report with abbreviations used on the plots as reference
