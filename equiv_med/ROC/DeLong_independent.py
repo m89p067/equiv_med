@@ -3,9 +3,13 @@ from math import sqrt
 from scipy.stats import t
 class DeLong_indep:      
     def __init__(self, true_labels1,measurement1,true_labels2,measurement2):
-        ''' DeLong stats: vectors of 0s and 1s as true labels and measurement labels'''
+        ''' 
+        DeLong stats on independent measurements
+        true_labels1,true_labels2   vectors of 0s and 1s as true labels for the first and second set of binary outcomes
+        measurement1,measurement2   measurements
+        '''
         check1=((true_labels1==0) | (true_labels1==1)).all()
-        check2=((true_labels2==0) | (true_labels1==2)).all()
+        check2=((true_labels2==0) | (true_labels1==1)).all()
         if check1==False or check2==False:
             print('Please convert both labels in binary values')
         self.labels1 = np.array(true_labels1) # LABELS
