@@ -8,7 +8,14 @@ import math
 class BA_analysis(eq_base.init_eq):
     is_normal=True
     def __init__(self, x, y):
-        ''' Revisited BA analysis'''
+        ''' 
+        Revisited BA analysis
+        Args:
+        x,y laboratory measurements assumed to be normally distributed
+        
+        NOTE: Limits of Agreement (approximated and exact) and 
+        Confidence Intervals can be adjusted with separate function calls
+        '''
         super().__init__(x, y)
         self._limitOfAgreement=1.96
         self._confidenceInterval=95
