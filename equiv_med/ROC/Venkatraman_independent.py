@@ -5,7 +5,12 @@ import seaborn as sns
 import pandas as pd
 class Venkatraman_indep:      
     def __init__(self, true_labels1,measurement1,true_labels2,measurement2):
-        ''' Venkatraman depedent ROC statistics: initial are true sets of 0s and 1s and then mesurement labels'''
+        ''' 
+        Venkatraman indepedent ROC statistics
+        Args:
+        true_labels1,true_labels2   two sets of 0s and 1s 
+        measurement1,measurement2   mesurements to be tested
+        '''
         check1=((true_labels1==0) | (true_labels1==1)).all()
         check2=((true_labels2==0) | (true_labels1==2)).all()
         if check1==False or check2==False:
