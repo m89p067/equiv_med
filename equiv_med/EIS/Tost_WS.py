@@ -7,7 +7,12 @@ class WS_eq(): #Welch_Satterthwaite
     is_normal=True
     same_var=True
     def __init__(self, x1, y1,delta1):
-        ''' Alternative TOST in case of heteroskedasticity in input series'''
+        ''' 
+        Alternative TOST in case of heteroskedasticity in input series
+        Args:
+        x1,y1   laboratory measurements
+        delta1 regulatory boundary assumed symmetric around zero (aka [-𝛿;𝛿]
+        '''
         self.x = np.asarray(x1)
         self.y = np.asarray(y1)
         self.margin=delta1
