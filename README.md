@@ -132,7 +132,7 @@ from equiv_med.EIS import Inf_or_Sup
 infer=Inf_or_Sup.IoS(var1,var2)
 infer.non_inferiority(ni_bound=0.1)
 infer.non_inferiority(ni_bound=0.65)
-print('\n')
+
 # Superiority
 sup=Inf_or_Sup.IoS(var1,var2)
 sup.superiority(sup_bound=0)
