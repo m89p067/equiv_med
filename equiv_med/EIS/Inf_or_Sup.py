@@ -11,7 +11,11 @@ def pt(q,df,ncp=0):
 class IoS():
     is_normal=True
     def __init__(self,x1,y1):
-        ''' Non-inferiority or Superiority test for 2 samples'''
+        ''' 
+        Non-inferiority or Superiority test for 2 samples
+        Args:
+        x1,y1 two set of measurements, could be lists or numpy 1D vectors 
+        '''
         self.data1=np.asarray(x1)
         self.data2=np.asarray(y1)
         normality1=stats.shapiro(x1)
