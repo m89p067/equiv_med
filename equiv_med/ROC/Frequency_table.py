@@ -7,7 +7,12 @@ import seaborn as sn
 import pdb
 class Freq_table:      
     def __init__(self,Diagnostic_result,Disease_status): # dichotomous values
-        ''' Confusion matrix and performance indexes'''
+        ''' 
+        Creates a 2x2 frequency table (aka confusion matrix) and extracts performance indexes
+        Args:
+        Diagnostic_result   binary vector with results of the laboratory test
+        Disease_status  binary vector with sick/healthy status of patients
+        '''
         check1=((Diagnostic_result==0) | (Diagnostic_result==1)).all()
         check2=((Disease_status==0) | (Disease_status==1)).all()
         if check1==False or check2==False:
