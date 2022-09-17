@@ -6,7 +6,14 @@ class Retesting():
     is_normal=True
     same_var=True
     def __init__(self,meas1,meas2):
-        ''' Repeated measurements using the same instrument (at t1 and t2)'''
+        ''' 
+        Repeated measurements analysis using the same instrument (at t1 and t2).
+        Calculates the Minimal Detectable Change (i.e., MDC)
+        Args:
+        meas1,meas2 two repeated measures, one at t1 and the other at t2
+        
+        NOTE: Paired measureemnts are expect to have equal variance
+        '''
         print('Input data are two repeated measurements')
         print('using the same instrument at t1 and t2')
         stat, p = stats.levene(meas1,meas2)
