@@ -6,7 +6,13 @@ from statistics import stdev
 class ICI_bounds(eq_base.init_eq):
     is_normal=True
     def __init__(self, x1, y1,paired=False):
-        ''' Inherent imprecision analysis'''
+        ''' 
+        Inherent imprecision analysis
+        Args:
+        x1,y1   laboratory measurements with known coefficients of variation
+        paired (True/False) if the two laboratory measurements are independent
+        or repeated measures
+        '''
         self.x = x1
         self.y = y1
         self.is_paired=paired
