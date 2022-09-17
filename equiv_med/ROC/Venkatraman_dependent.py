@@ -5,8 +5,12 @@ import pandas as pd
 from statsmodels.distributions.empirical_distribution import ECDF
 class Venkatraman_dep:      
     def __init__(self, true_labels,measurement1,measurement2):
-        ''' Venkatraman depedent ROC statistics: initial input is a set of 0s and 1s and then two mesurement labels'''
-        
+        ''' 
+        Venkatraman depedent ROC statistics
+        Args:
+        true_labels initial input is a set of 0s and 1s 
+        measurement1,measurement2 two mesurements
+        '''        
         check1=((true_labels==0) | (true_labels==1)).all()
         if check1==False:
             print('Please convert the labels in binary values')
