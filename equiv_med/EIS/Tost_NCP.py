@@ -173,8 +173,8 @@ class Tost_paired():
                                   ncol=3, fancybox=True, shadow=True)
             
             plt.show()
-    def stat_power(self):
-        prec=4
+    def stat_power(self,prec=4):
+        
         diff=self.x-self.y
         alpha=self._alpha #DESIGNATED ALPHA
         prop0=self._Null_Central_Proportion #NULL CENTRAL PROPORTION
@@ -229,8 +229,8 @@ class Tost_paired():
         gpower=np.sum(wcpdf*(stats.norm.cdf(heut)-stats.norm.cdf(helt)))
         print('Nominal power :',round(gpower,prec) ,' with critical value ',round(gam,prec))
         
-    def opt_sample_size(self,power=0.8):
-        prec=4
+    def opt_sample_size(self,power=0.8,prec=4):
+        
         diff=self.x-self.y
         alpha=self._alpha #DESIGNATED ALPHA
         prop0=self._Null_Central_Proportion #NULL CENTRAL PROPORTION
