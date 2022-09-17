@@ -67,7 +67,11 @@ class TOST_T():
     is_normal=True
     same_var=True
     def __init__(self, x1, y1):
-        ''' TOST alternative implementations'''
+        ''' 
+        TOST alternative implementations
+        Args:
+        x1,y1 two laboratory measurements
+        '''
         print('Testing hypothesis of equivalence')
         self.x = np.asarray(x1)
         self.y = np.asarray(y1)
