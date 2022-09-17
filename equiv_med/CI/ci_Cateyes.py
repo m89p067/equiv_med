@@ -8,7 +8,11 @@ from . import ci_base
 class Cat_Eye_2var(ci_base.init_ci):
     is_normal=True
     def __init__(self, x, y):
-        ''' Paired or single Cat's Eye plots'''
+        ''' 
+        Paired or single Cat's Eye plots
+        Args:
+        x,y Two vectors representing the measurements
+        '''
         super().__init__(x, y)
         normality1=stats.shapiro(self.x)    
         normality2=stats.shapiro(self.y)
