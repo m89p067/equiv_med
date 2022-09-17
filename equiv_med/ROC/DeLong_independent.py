@@ -5,6 +5,7 @@ class DeLong_indep:
     def __init__(self, true_labels1,measurement1,true_labels2,measurement2):
         ''' 
         DeLong stats on independent measurements
+        Args:
         true_labels1,true_labels2   vectors of 0s and 1s as true labels for the first and second set of binary outcomes
         measurement1,measurement2   measurements
         '''
