@@ -117,7 +117,7 @@ class TOST_T():
         else:
             print('No equivalence')
             print('Do not reject the NULL hypothesis')
-    def run_TOST_MW(self,alpha = 0.05, marginX = 1.7):
+    def run_TOST_MW(self,alpha = 0.05, marginX = 1.7,prec=2):
         ''' Modified Wald TOST, requires a multiplier parameter'''
         from_append=True
         vecT=self.x
@@ -154,7 +154,7 @@ class TOST_T():
             ci_L=smplMuT - smplMuR - qntl*sqrt(estL[2]**2/nTnew + (1.0/nRnew + eta**2*Vn/(nR-1))*estL[3]**2)
             ci_U=smplMuT - smplMuR + qntl*sqrt(estU[2]**2/nTnew+ (1.0/nRnew + eta**2*Vn/(nR-1))*estU[3]**2)
         
-        prec=2
+        
         print('NULL HYPOTHESIS:the difference between the means of two samples are not within a margin')
         print("Estimated L [New] : mean ", round(estL[0], prec), ", std ",round(estL[2], prec))
         print("Estimated L [Ref] : mean ", round(estL[1], prec), ", std ",round(estL[3], prec))
