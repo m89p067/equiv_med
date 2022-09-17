@@ -4,7 +4,12 @@ import matplotlib.pyplot as plt
 from statistics import stdev,mean
 class Id_margin:
     def __init__(self,var_values,confidence_Interval=0.95):
-        ''' Helps to identify equiv. margins based on stacked CI representations'''
+        ''' 
+        Helps to identify equiv. margins based on stacked CI representations
+        Args:
+        var_values  Normally distributed sequence of values as input vector  
+        confidence_Interval Confidence interval (default 95% set as 0.95)
+        '''
         z,pval = stats.normaltest(var_values)        
         if pval < 0.05:
             print("Not normal distribution")
