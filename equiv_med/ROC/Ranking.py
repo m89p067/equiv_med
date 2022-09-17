@@ -9,7 +9,12 @@ from statsmodels.distributions.empirical_distribution import ECDF
 from . import Roc_youden
 class Ranking_plots(Roc_youden.Youden_Roc):
     def __init__(self, x2,true_labels1):
-        ''' FPR vs. TPR plot with KS stats and Precision vs. Recall with AUC'''
+        ''' 
+        FPR vs. TPR plot with KS stats and Precision vs. Recall with AUC
+        Args:
+        x2  vector with input data
+        true_labels1    binary labels
+        '''
         self.the_labels=true_labels1
         self.the_controls = x2[true_labels1 == 0]
         self.the_cases = x2[true_labels1 == 1]
