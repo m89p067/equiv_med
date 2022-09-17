@@ -15,6 +15,7 @@ class BA_analysis(eq_base.init_eq):
         
         NOTE: Limits of Agreement (approximated and exact) and 
         Confidence Intervals can be adjusted with separate function calls
+        (default LoA 1.96 and C.I. 95%)
         '''
         super().__init__(x, y)
         self._limitOfAgreement=1.96
