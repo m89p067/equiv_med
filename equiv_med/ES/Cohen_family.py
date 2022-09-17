@@ -13,7 +13,14 @@ class Cohen_es:
     design_type='indep'
     dep_divider=''
     def __init__(self, x1, y1,design='indep',dep_divider_type=''):
-        ''' Unit-less effect size computation for dep. or indep. series'''
+        ''' 
+        Unit-less effect size computation for dep. or indep. series
+        Args:
+        x1,y1   two sets of measurements as lists or numpy 1D vectors
+        design  independenet or dependent (repeated) measurements
+        dep_divider_type    divider in repreated measures design (empty leaving '', 'aver_sd',  
+        'sd_diff', or 'conv_sd_diff')
+        '''
         self.x = np.asarray(x1)
         self.y = np.asarray(y1)
         if len(x1)!=len(y1):
