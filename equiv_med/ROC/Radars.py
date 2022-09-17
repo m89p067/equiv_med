@@ -4,7 +4,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 class Radar_plots:      
     def __init__(self,indexes_list,print_abbr=False):
-        ''' Radar plots for series of indexes'''
+        ''' 
+        Radar plots for series of indexes
+        Args:
+        indexes_list    a list with index names (follow nomenclature)
+        print_abbr  prints a report with abbreviations used on the plots as reference
+        '''
         if len(indexes_list)<5 or len(indexes_list)>9:
             raise ValueError("Please, length of the selected indexes should be between 5 and 9")
         self.select_list=indexes_list
