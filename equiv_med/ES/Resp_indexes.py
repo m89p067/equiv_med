@@ -6,7 +6,12 @@ class Responsiveness():
     is_normal=True
     same_var=True
     def __init__(self,control_t1,control_t2,treatment_t1,treatment_t2):
-        ''' Responsiveness: control biomarkers at t1 and t2, and treatment biomarkers at t1 and t2'''
+        ''' 
+        Responsiveness to change analysis. 
+        Args:
+        control_t1,control_t2   control biomarkers at t1 and t2
+        treatment_t1,treatment_t2   treatment biomarkers at t1 and t2
+        '''
         print('First two inputs assumed as baseline/control measurement at t1 and t2')
         print('Second two inputs assumed as treatment/improved measurement at t1 and t2')
         stat, p = stats.levene(control_t1,control_t2,treatment_t1,treatment_t2)
