@@ -8,7 +8,12 @@ class Tost_paired():
     is_normal=True
     same_var=True
     def __init__(self, x1, y1,delta1):
-        ''' TOST alternative implemented for paired mesuremenets'''
+        ''' 
+        TOST alternative implemented for paired mesuremenets
+        Args:
+        x1,y1 paired measurements
+        delta1 regulatory boundary 𝛿 (symmetric around zero, aka [-𝛿;𝛿])
+        '''
         print('Assuming two paired measurements')
         self.x = np.asarray(x1)
         self.y = np.asarray(y1)
