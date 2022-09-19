@@ -123,7 +123,8 @@ class Cat_Eye_2var(ci_base.init_ci):
             
             outcome_sentence=self.control_of_CI_bounds([low_a,high_a,low_b,high_b])
             print('At ',the_alpha*100,'% probability : ',outcome_sentence)
-            
+        else:
+            print('Not normal input data')
     def run_ce_unbiased(self,level_CI_as_perc):
         if Cat_Eye_2var.is_normal:
             while( level_CI_as_perc<1 or level_CI_as_perc>99):
@@ -189,7 +190,8 @@ class Cat_Eye_2var(ci_base.init_ci):
             outcome_sentence=self.control_of_CI_bounds([low_a,high_a,low_b,high_b])
             print('At ',the_alpha*100,'% probability : ',outcome_sentence)
             plt.show()
-
+        else:
+            print('Not normal input data')
     def single_cat_eye(self,a,level_CI=95):
         font = {'family': 'serif',
         'color':  'black',
@@ -229,7 +231,8 @@ class Cat_Eye_2var(ci_base.init_ci):
             ax.spines['top'].set_visible(False)
             ax.spines['right'].set_visible(False)
             plt.show()
-
+        else:
+            print('Not normal input data')
     def single_cat_eye_unbiased(self,a,level_CI=95):
         font = {'family': 'serif',
         'color':  'black',
@@ -270,3 +273,5 @@ class Cat_Eye_2var(ci_base.init_ci):
             ax.spines['top'].set_visible(False)
             ax.spines['right'].set_visible(False)
             plt.show()
+        else:
+            print('Not normal input data')
