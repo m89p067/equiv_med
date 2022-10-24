@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.stats as stats
 from math import sqrt
-from statistics import stdev
+from statistics import stdev,mean
 import statsmodels.api as sm
 class init_eq:
     def __init__(self, x1, y1):
