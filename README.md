@@ -10,7 +10,7 @@ The repository contains Python functions to produce novel graphs for biomedical 
 ```Python
 pip install git+https://github.com/m89p067/equiv_med.git
 ```
-Please check pip, git and setuptools are properly installed on your system.
+Please check pip, git and setuptools are properly installed on your system. For re-installing the library without dependencies, use `pip install --force-reinstall --no-deps git+https://github.com/m89p067/equiv_med.git`
 
 # Explanations, references, and examples included in:<br />
 M. Nascimben and L. Rimondini <br />
