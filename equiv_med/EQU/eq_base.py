@@ -88,3 +88,53 @@ class init_eq:
         indices = np.abs(array - values).argmin(axis=-1)
     
         return array[indices],indices
+    def lin_corr(self,conf_level=0.95,ci = "z-transform"): # INDEP MEASURESES
+        vectorx=self.x
+        vectory=self.y
+        N= 1 - ((1 - conf_level)/2)
+        zv = ss.norm.ppf(N, loc = 0, scale = 1)
+        k  =len(vectory)
+        yb = mean(vectory)
+        sy2 = variance(vectory) * (k - 1)/k
+        sd1 = stdev(vectory)
+        xb = mean(vectorx)
+        sx2 = variance(vectorx) * (k - 1)/k
+        sd2 = stdev(vectorx)
+        #r1 = np.correlate(vectorx, vectory)[0]
+        r1=ss.pearsonr(vectorx,vectory)[0]
+        sl = r1 * sd1/sd2
+        sxy = r1 * sqrt(sx2 * sy2)
+        p1 = 2 * sxy/(sx2 + sy2 + (yb - xb)**2)
+        delta = vectorx-vectory
+
+        dat=np.column_stack((vectorx,vectory))
+        rmean = np.mean(dat, axis=1)
+        blalt = np.column_stack(( rmean, delta))
+
+        v = sd1/sd2
+        u = (yb - xb)/((sx2 * sy2)**0.25)
+        C_b = p1/r1
+        sep = sqrt(((1 - (r1**2)) * (p1**2) * (1 - ((p1**2)))/(r1**2) + (2 * (p1**3) * (1 - p1) * (u**2)/r1) - 0.5 * (p1**4) * (u**4)/(r1**2))/(k - 2))
+        ll = p1 - (zv * sep)
+        ul = p1 + (zv * sep)
+        t = np.log((1 + p1)/(1 - p1))/2
+        set1 = sep/(1 - (p1**2))
+        llt = t - (zv * set1)
+        ult = t + (zv * set1)
+        llt = (exp(2 * llt) - 1)/(exp(2 * llt) + 1)
+        ult = (exp(2 * ult) - 1)/(exp(2 * ult) + 1)
+        delta_sd = sqrt(np.var(delta))
+
+        ba_p = mean(delta)
+        ba_l =ba_p - (zv * delta_sd)
+        ba_u = ba_p + (zv * delta_sd)
+        sblalt = {'est' : ba_p, 'delta_sd' : delta_sd, 'lower' : ba_l,  'upper': ba_u}
+        if (ci == "asymptotic") :
+            rho_c = {"est":p1, "lower":ll,"upper": ul}        
+            rval = {"rho" : rho_c, "s_shift" : v, "l_shift" : u,"C_b" : C_b, "blalt" : blalt, "sblalt" : sblalt}
+
+        elif (ci == "z-transform") :
+            rho_c ={"est":p1,"lower": llt,"upper": ult}        
+            rval = {"rho" : rho_c, "s_shift" : v, "l_shift" : u,"C_b" : C_b, "blalt" : blalt, "sblalt" : sblalt}
+
+        return rho_c #,rval
