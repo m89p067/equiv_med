@@ -92,7 +92,7 @@ class init_eq:
         vectorx=self.x
         vectory=self.y
         N= 1 - ((1 - conf_level)/2)
-        zv = ss.norm.ppf(N, loc = 0, scale = 1)
+        zv = stats.norm.ppf(N, loc = 0, scale = 1)
         k  =len(vectory)
         yb = mean(vectory)
         sy2 = variance(vectory) * (k - 1)/k
@@ -101,7 +101,7 @@ class init_eq:
         sx2 = variance(vectorx) * (k - 1)/k
         sd2 = stdev(vectorx)
         #r1 = np.correlate(vectorx, vectory)[0]
-        r1=ss.pearsonr(vectorx,vectory)[0]
+        r1=stats.pearsonr(vectorx,vectory)[0]
         sl = r1 * sd1/sd2
         sxy = r1 * sqrt(sx2 * sy2)
         p1 = 2 * sxy/(sx2 + sy2 + (yb - xb)**2)
