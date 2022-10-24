@@ -55,7 +55,7 @@ my_regr=eq_Regr.Regr_diagn(var1,var2)
 my_regr.run_diagnostic([0.05,0.1,0.2]) # Cook distances values 
 my_regr.influential_points() #DIFFITS & DFBETAS with default thresholds
 ```
-### Lin’s Concordance Correlation Coefficient
+### Lin’s concordance correlation coefficient
 Calculates Lin's correlation for comparing two independent measurements (new continuous measurement over an existing measurement technique)
 ```Python
 from equiv_med.EQU import eq_Regr
