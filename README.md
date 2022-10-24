@@ -60,7 +60,7 @@ Calculates Lin's correlation for comparing two independent measurements (new con
 ```Python
 from equiv_med.EQU import eq_Regr
 my_regr=eq_Regr.Regr_diagn(var1,var2)
-out=my_regr.lin_corr() #https://doi.org/10.2307/2532051 
+out=my_regr.lin_corr() #https://doi.org/10.1177/1536867X0200200206  
 print('Lin’s Concordance Correlation Coefficient :',out['est'])
 print('Lower C.I. : ',out['lower'])
 print('Upper C.I. : ',out['upper'])
