@@ -12,3 +12,21 @@ version: 0.11
 doi: 10.5281/zenodo.6504217
 date-released: 2022-04-29
 url: "https://github.com/m89p067/equiv_med"
+preferred-citation:
+  type: article
+  authors:
+- family-names: "Nascimben"
+  given-names: "Mauro"
+  orcid: "https://orcid.org/0000-0001-7123-5577"
+- family-names: "Rimondini"
+  given-names: "Lia"
+  orcid: "https://orcid.org/0000-0002-7785-2282"
+  doi: "https://dx.doi.org/10.15439/2022f32"
+  journal: "Annals of Computer Science and Information Systems"
+  month: 9
+  start: 241 # First page number
+  end: 249 # Last page number
+  title: "Visually Enhanced Python Functions for Clinical Equality of Measurement Assessment"
+  issue: 0
+  volume: 32
+  year: 2022
