@@ -93,8 +93,10 @@ Please refer to the following image for a quick understanding of equivalence, no
 ![Eq_scheme](eq_low.png)
 
 Equivalence testing 
+
 $$H_{0} : \overline{m_{1}}-\overline{m_{2}}\leq-\delta\quad or\quad \overline{m_{1}}-\overline{m_{2}}\geq\delta $$
 $$H_{1} : -\delta<\overline{m_{1}}-\overline{m_{2}}<\delta$$
+
 ```Python
 from equiv_med.EIS import Standard_Tost
 eq_tost=Standard_Tost.EQU(var1,var2,-5.5,5.5) # [-5.5;5.5] are the user-defined regulatory boundaries simmetric to zero
