@@ -21,12 +21,12 @@ preferred-citation:
   - family-names: "Rimondini"
     given-names: "Lia"
     orcid: "https://orcid.org/0000-0002-7785-2282"
-doi: "10.15439/2022f32"
-journal: "Annals of Computer Science and Information Systems"
-month: 9
-start: 241 # First page number
-end: 249 # Last page number
-title: "Visually Enhanced Python Functions for Clinical Equality of Measurement Assessment"
-issue: 1
-volume: 32
-year: 2022
+  doi: "10.15439/2022f32"
+  journal: "Annals of Computer Science and Information Systems"
+  month: 9
+  start: 241 # First page number
+  end: 249 # Last page number
+  title: "Visually Enhanced Python Functions for Clinical Equality of Measurement Assessment"
+  issue: 1
+  volume: 32
+  year: 2022
