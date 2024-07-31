@@ -21,7 +21,7 @@ preferred-citation:
 - family-names: "Rimondini"
   given-names: "Lia"
   orcid: "https://orcid.org/0000-0002-7785-2282"
-doi: "dx.doi.org/10.15439/2022f32"
+doi: "10.15439/2022f32"
 journal: "Annals of Computer Science and Information Systems"
 month: 9
 start: 241 # First page number
