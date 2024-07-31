@@ -15,12 +15,12 @@ url: "https://github.com/m89p067/equiv_med"
 preferred-citation:
   type: article
   authors:
-- family-names: "Nascimben"
-  given-names: "Mauro"
-  orcid: "https://orcid.org/0000-0001-7123-5577"
-- family-names: "Rimondini"
-  given-names: "Lia"
-  orcid: "https://orcid.org/0000-0002-7785-2282"
+  - family-names: "Nascimben"
+    given-names: "Mauro"
+    orcid: "https://orcid.org/0000-0001-7123-5577"
+  - family-names: "Rimondini"
+    given-names: "Lia"
+    orcid: "https://orcid.org/0000-0002-7785-2282"
 doi: "10.15439/2022f32"
 journal: "Annals of Computer Science and Information Systems"
 month: 9
